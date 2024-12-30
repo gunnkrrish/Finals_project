@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #222;
+            color: white;
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 1s ease-in-out;
+            overflow-x: hidden;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            width: 70%;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: black;
+            border-radius: 15px;
+            border: 2px solid transparent;
+            text-align: center;
+        }
+
+        .container:hover {
+            border: 3px solid rgb(161, 109, 198);
+            transform: scale(1.03);
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .container:hover {
+            border: 3px solid rgb(161, 109, 198);
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(174, 134, 202);
+            margin-bottom: 20px;
+            font-size: 32px;
+            font-family: 'Times New Roman', serif;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            opacity: 0;
+            animation: slideInLabel 0.5s ease-out forwards;
+        }
+
+        @keyframes slideInLabel {
+            0% {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .input-container {
+            position: relative;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        .input-container input, .input-container select, .input-container textarea {
+            width: calc(100% - 35px);
+            padding: 10px;
+            padding-left: 35px;
+            background-color: transparent;
+            color: rgb(165, 160, 160);
+            border: none;
+            border-bottom: 2px solid #444;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+            text-align: left;
+            opacity: 0;
+            animation: fadeInLeft 1s ease-out forwards;
+        }
+
+        @keyframes fadeInLeft {
+            0% {
+                transform: translateX(-20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .input-container i {
+            position: absolute;
+            left: 10px;
+            color: rgb(156, 117, 184);
+            font-size: 18px;
+        }
+
+        .password-container {
+            position: relative;
+            width: 100%;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        .password-container i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgb(156, 107, 192);
+            font-size: 18px;
+        }
+
+        .password-container .toggle-password {
+            position: absolute;
+            right: -400px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgb(156, 113, 187);
+            cursor: pointer;
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .password-container .toggle-password:hover {
+            transform: translateY(-50%) scale(1.2);
+        }
+
+        button[type="submit"] {
+            display: block;
+            margin: 20px auto;
+            padding: 12px;
+            background-color: rgb(166, 131, 190);
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            animation: pulseButton 1s infinite;
+        }
+
+        @keyframes pulseButton {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+                background-color: rgb(163, 120, 200);
+            }
+            100% {
+                transform: scale(1);
+                background-color: rgb(166, 131, 190);
+            }
+        }
+
+        button[type="submit"]:hover {
+            background-color: rgb(163, 120, 200);
+            transform: scale(1.05);
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .row-inline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+        }
+
+        .row-inline div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #birthdate {
+            width: 150px;
+            padding: 10px;
+            background-color: transparent;
+            color: rgb(165, 160, 160);
+            border: none;
+            border-bottom: 2px solid #444;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+            text-align: left;
+            opacity: 0;
+            animation: fadeInLeft 1s ease-out forwards;
+        }
+
+        #birthdate:focus {
+            border-bottom: 2px solid rgb(180, 124, 220);
+        }
+
+        .row-country {
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        .row-country select, .row-country input {
+            flex: 1;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .row, .row-inline, .row-country {
+                flex-direction: column;
+            }
+
+            .row input, .row-inline input[type="date"], .row-country select, .row-country input {
+                width: 100%;
+            }
+        }
+
+        .shake {
+            animation: shake 0.4s ease-in-out;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-5px);
+            }
+            50% {
+                transform: translateX(5px);
+            }
+            75% {
+                transform: translateX(-5px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Registration</h1>
+        <form action="/register" method="POST">
+            <div class="row">
+                <div class="input-container">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
+                </div>
+                <div class="input-container">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
+                </div>
+            </div>
+
+            <div class="password-container input-container">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+            </div>
+
+            <div class="password-container input-container">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" required>
+                <i class="fas fa-eye toggle-password" id="toggleConfirmPassword"></i>
+            </div>
+
+            <div class="input-container">
+                <i class="fas fa-phone"></i>
+                <input type="text" id="mobile" name="mobile" placeholder="Mobile" required>
+            </div>
+
+            <div class="row-inline">
+                <div>
+                    <input type="radio" id="male" name="gender" value="Male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female">Female</label>
+                </div>
+                <label for="birthdate">Birthdate : </label>
+                <input type="date" id="birthdate" name="birthdate" placeholder="dd-mm-yy" required>
+            </div>
+
+            <div class="input-container">
+                <i class="fas fa-map-marker-alt"></i>
+                <textarea id="address" name="address" rows="4" placeholder="Address" required></textarea>
+            </div>
+
+            <div class="row-country">
+                <div class="input-container">
+                    <i class="fas fa-globe"></i>
+                    <select id="country" name="country" required>
+                        <option value="">Select Country</option>
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                        <option value="Australia">Australia</option>
+                    </select>
+                </div>
+                <div class="input-container">
+                    <i class="fas fa-map-pin"></i>
+                    <input type="text" id="pincode" name="pincode" placeholder="Pincode" required>
+                </div>
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        const togglePassword = document.getElementById("togglePassword");
+        const password = document.getElementById("password");
+        
+        const toggleConfirmPassword = document.getElementById("toggleConfirmPassword");
+        const confirmPassword = document.getElementById("confirmpassword");
+
+        function togglePasswordVisibility(inputElement, iconElement) {
+            const type = inputElement.getAttribute("type") === "password" ?  "text" : "password";
+            inputElement.setAttribute("type", type);
+            iconElement.classList.toggle("fa-eye-slash");
+            iconElement.classList.toggle("fa-eye");
+        }
+
+        togglePassword.addEventListener("click", function() {
+            togglePasswordVisibility(password, togglePassword);
+        });
+
+        toggleConfirmPassword.addEventListener("click", function() {
+            togglePasswordVisibility(confirmPassword, toggleConfirmPassword);
+        });
+    </script>
+        
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Build a Survey Form using HTML and CSS</title>
+
+	<style>
+		/* Styling the Body element i.e. Color, Font, Alignment */
+		/* Styling the Body element i.e. Color, Font, Alignment */
+		body {
+			background-image: url("https://t3.ftcdn.net/jpg/03/89/32/80/360_F_389328016_ak3iUrk15slWfEZdYL96O6eKTUyImDeC.jpg");
+			/* Replace 'ch3.jpg' with the actual path to your image file */
+			background-size: cover ;
+			/* This ensures the background image covers the entire viewport */
+			background-repeat: no-repeat;
+			/* Prevent the background image from repeating */
+			background-attachment: fixed;
+			/* Fix the background image so it doesn't scroll with the content */
+			background-position: center center;
+			/* Center the background image both horizontally and vertically */
+			background-color: black;
+			/* Fallback background color in case the image doesn't load */
+			font-family: Georgia;
+			text-align: center;
+		}
+
+
+		/* Styling the Form (Color, Padding, Shadow) */
+		form {
+			background-color: rgb(209, 233, 242);
+			max-width: 500px;
+			margin: 50px auto;
+			padding: 30px 20px;
+			box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+		}
+
+		/* Styling form-control Class */
+		.form-control {
+			text-align: left;
+			margin-bottom: 25px;
+		}
+
+		/* Styling form-control Label */
+		.form-control label {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		/* Styling form-control input, select, textarea */
+		.form-control input,
+		.form-control select,
+		.form-control textarea {
+			border: 2px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			padding: 10px;
+			display: block;
+			width: 95%;
+		}
+
+		/* Styling form-control Radio button and Checkbox */
+		.form-control input[type="radio"],
+		.form-control input[type="checkbox"] {
+			display: inline-block;
+			width: auto;
+		}
+
+		/* Styling Button */
+		button {
+			background-color: rgb(133, 180, 228);
+			border: 0px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			font-size: 21px;
+			display: block;
+			width: 100%;
+			margin-top: 50px;
+			margin-bottom: 20px;
+		}
+		h1{
+			color:rgb(20, 22, 27);
+			font-size:xxx-large;
+			padding-left: 30px;
+			
+		}
+		.resultRow{
+			display: flex;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1 id="heading">
+		<i>SOCIAL MEDIA AND ITS DARK SIDES</i>
+	</h1>
+	<ul>
+		<!-- Create Form -->
+		<form name="submit-to-google-sheet" id="myForm">
+			<!-- Details -->
+			<div class="form-control">
+				<li><label for="name" id="label-name">Enter your name</label></li>
+				<!-- Input Type Text -->
+				<input type="text" id="name" placeholder="Enter your name" />
+			</div>
+
+			<div class="form-control">
+				<b><p>1. Which social media platform do you use regularly?</p></b>
+        <label for="Whatsapp">   
+            <input type="radio" id="Whatsapp" name="Personal Choice of Social Media platform" value="Whatsapp"> Whatsapp<br>
+        </label>
+       <label for="Instagram">
+          <input type="radio" id="Instagram" name="Personal Choice of Social Media platform" value="Instagram"> Instagram<br>
+       </label>
+       <label for="Facebook"> 
+           <input type="radio" id="Facebook" name="Personal Choice of Social Media platform" value="Facebook"> Facebook<br>
+       </label>
+       <label for="Snapchat">   
+           <input type="radio" id="Snapchat" name="Personal Choice of Social Media platform" value="Snapchat"> Snapchat<br>
+           </label>
+        <label for="Twitter">
+            <input type="radio" id="Twitter" name="Personal Choice of Social Media platform" value="Twitter"> Twitter<br>
+        </label>
+
+			</div>
+			<div class="form-control">
+				<b><p>2. What is the primary reason for your use of social media?</p></b>
+
+        <label for="Staying connected with friends and family">  
+            <input type="radio" id="Staying connected with friends and family" name="Primary reason for use of Social Media" value="Staying connected with friends and family"> Staying connected with friends and family<br>
+        </label>
+        <label for="Keeping up with the news and current events">
+            <input type="radio" id="Keeping up with the news and current events" name="Primary reason for use of Social Media" value="Keeping up with the  news and current events"> Keeping up with the news and current events<br>
+        </label>
+        <label for ="Entertainment and leisure">
+            <input type="radio" id="Entertainment and leisure" name="Primary reason for use of Social Media" value="Entertainment and leisure"> Entertainment and leisure<br>
+        </label>
+        <label for="Professional networking">
+            <input type="radio" id="Professional networking" name="Primary reason for use of Social Media" value="Professional networking"> Professional networking<br>
+
+			</div>
+
+			<div class="form-control">
+				<b><p>3. Have you  ever personally experienced any negative effects related to social media?</p></b>
+				<select name="Personally experienced any negative effects related to social media">
+					<option value="Yes">YES</option>
+					<option value="No">NO</option>
+				</select>
+
+			</div>
+
+			<div class="form-control">
+				<b><p>4. Which social media platform according to you has the most negative impact?</p></b>
+        
+<label for="Twitter_platform">      
+    <input type="radio" id="Twitter_platform" name="Most negative platform" value="Twitter"> Twitter<br>
+</label>
+<label for="Instagram_platform">      
+    <input type="radio" id="Instagram_platform" name="Most negative platform" value="Instagram"> Instagram<br>
+</label>
+<label for="Facebook_platform">      
+    <input type="radio" id="Facebook_platform" name="Most negative platform" value="Facebook"> Facebook<br>
+</label>
+<label for="Snapchat_platform">      
+    <input type="radio" id="Snapchat_platform" name="Most negative platform" value="Snapchat"> Snapchat<br>
+</label>
+<label for="Whatsapp_platform">      
+    <input type="radio" id="Whatsapp_platform" name="Most negative platform" value="Whatsapp">Whatsapp<br>
+</label>
+
+			</div>
+
+			<div class="form-control">
+				<b><p>5.  Have you ever experienced any of the following potential social media negative impact(s)? (Select all that apply)</p><br></b>
+        
+         
+<label for="General addiction">
+<input type="checkbox" id="General addiction" name=" Social Media Dark experience" value="General addiction"> General addiction<br>
+</label>
+<label for="Disturbed mental health">
+<input type="checkbox" id="Disturbed mental health" name="Social Media Dark experience" value="Disturbed mental health"> Disturbed mental health<br>
+</label>
+<label for="Cyberbullying">
+<input type="checkbox" id="Cyberbullying" name="Social Media Dark experience" value="Cyberbullying"> Cyberbullying<br>
+</label>
+<label for="Privacy issues">
+<input type="checkbox" id="Privacy issues" name="Social Media Dark experience" value="Privacy issues"> Privacy Issues<br>
+</label>
+<label for="FOMO(Fear of missing out)">
+<input type="checkbox" id="FOMO(Fear of missing out)" name="Social Media Dark experience" value="FOMO(Fear of missing out)"> FOMO(Fear of missing out)<br>
+</label>
+<label for="Others">
+<input type="checkbox" id="Others" name="Social Media  Dark experience" value="Others"> Others<br><br>
+</label>
+			</div>
+
+			<div class="form-control">
+				<b><p>6.How does social media impact your  mental health? (Select all that apply)</p><br></b>
+        
+        <label for="Increases stress">
+        <input type="checkbox" id="Increases stress" name="Negative impact on Mental Health" value="Increases stress"> Increases stress<br>
+        </label> 
+        <label for="Enhances loneliness">
+        <input type="checkbox" id="Enhances loneliness" name="Negative impact on Mental Health" value="Enhances loneliness"> Enhances loneliness<br>
+        </label>
+        <label for="Boosts self-esteem">
+        <input type="checkbox" id="Boosts self-esteem" name="Negative impact on Mental Health" value="Boosts self-esteem"> Boosts self-esteem<br>
+        </label>
+        <label for="Decreases self-esteem">
+        <input type="checkbox" id="Decreases self-esteem" name="Negative impact on Mental Health" value="Decreases self-esteem"> Decreases self-esteem<br>
+        </label>
+        <label for="Leads to anxiety and depression">
+        <input type="checkbox" id="Others" name="Negative impact on Mental Health" value="Leads to anxiety and depression"> Leads to anxiety and depression<br><br>
+        </label>
+			</div>
+
+
+			<div class="form-control">
+				<b><p>7.How do you deal with negative content or experiences on social media? (Select all that apply)</p><br></b>
+        
+        <label for="Block or unfollow individuals">
+        <input type="checkbox" id="Block or unfollow individuals" name="Ways to deal with negative experiences" value="Block or unfollow individuals"> Block or unfollow individuals<br>
+        </label> 
+        <label for="Report the content">
+        <input type="checkbox" id="Report the content" name="Ways to deal with negative experiences" value="Report the content"> Report the content<br>
+        </label>
+        <label for="Taking a break from Social media">
+        <input type="checkbox" id="Taking a break from Social media" name="Ways to deal with negative experiences" value="Taking a break from Social media"> Taking a break from Social media<br>
+        </label>
+        <label for="Ignoring it">
+        <input type="checkbox" id="Ignoring it" name="Ways to deal with negative experiences" value="Ignoring it"> Ignoring it<br>
+        </label>
+        <label for="Talking to friends and family for support">
+        <input type="checkbox" id="Others" name="Ways to deal with negative experiencest" value="Talking to friends and family for support"> Talking to friends and family for support<br>
+        </label>
+			</div>
+			<div class="form-control">
+				<b><p>8. What measures according to you  should be taken to reduce the negative impacts of social media ?</p></b>
+        <textarea name="Measures to be taken to reduce effects of social media" rows="5" cols="60"></textarea>
+
+			</div>
+
+			<div class="form-control">
+				
+					<button type="submit">Submit
+				<!-- </a> -->
+			</button>
+			</div>
+		</form>
+		
+		<div id="result">
+		</div>
+		<script src="index.js"></script>
+</body>
+
+</html>

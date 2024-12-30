@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    * {
+      font-family: Gill Sans, sans-serif;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      background: black;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+    }
+
+    h3 {
+      margin: 5px;
+    }
+
+    .skill {
+      width: 500px;
+      margin: 60px auto;
+      padding: 20px;
+      box-shadow: 0 0px 30px #00ffee;
+    }
+
+    .skill li {
+      margin: 20px 0;
+      padding: 10px;
+      color: white;
+    }
+
+    .bar {
+      background: #131417;
+      display: block;
+      height: 20px;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .bar:hover {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    .bar span {
+      height: 20px;
+      float: left;
+      background: linear-gradient(135deg, #023935 0%, #00ffee 100%);
+    }
+
+    .html {
+      width: 90%;
+      animation: html 3s;
+    }
+
+    .css {
+      width: 70%;
+      animation: css 3s;
+    }
+
+    .javascript {
+      width: 60%;
+      animation: javascript 3s;
+    }
+    .php {
+      width: 45%;
+      animation: php 3s;
+    }
+
+   @keyframes html {
+      0% {
+        width: 0%
+      }
+
+      100% {
+        width: 90%;
+      }
+    }
+
+    @keyframes css {
+      0% {
+        width: 0%
+      }
+
+      100% {
+        width: 70%;
+      }
+    }
+
+    @keyframes php {
+      0% {
+        width: 0%
+      }
+
+      100% {
+        width: 45%;
+      }
+    }
+
+    @keyframes javascript {
+      0% {
+        width: 0%
+      }
+
+      100% {
+        width: 60%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="skill">
+    <h1>My skills</h1>
+    <li>
+      <h3>Html</h3>
+      <span class="bar"><span class="html">
+        </span>
+      </span>
+    </li>
+    <li>
+      <h3>Css</h3>
+      <span class="bar"><span class="css">
+        </span>
+      </span>
+    </li>
+    <li>
+      <h3>Php</h3>
+      <span class="bar"><span class="php">
+        </span>
+      </span>
+    </li>
+    <li>
+      <h3>Javascript</h3>
+      <span class="bar"><span class="javascript">
+        </span>
+      </span>
+    </li>
+  </div>
+</body>
+
+</html>

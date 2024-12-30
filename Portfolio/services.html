@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    #services {
+      padding: 30px 0;
+    }
+    body{
+      background-color: black;
+      color: white;
+      text-align: center;
+    }
+
+
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-gap: 40px;
+      margin-top: 50px;
+    }
+
+    .services-list div {
+      background: #262626;
+      padding: 40px;
+      font-size: 13px;
+      font-weight: 300;
+      border-right: 10px;
+      transition: background 0.5s, transform 0.5s;
+    }
+
+    .services-list div i {
+      font-size: 50px;
+      margin-bottom: 30px;
+    }
+
+    .services-list div h2 {
+      font-size: 30px;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .services-list div a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 12px;
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    .services-list div:hover {
+      background: #00ffee;
+      transform: translate(-10px);
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="services">
+    <div class="container">
+      <h1 class="sub-title">My Services</h1>
+      <div class="services-list">
+        <div>
+          <i class="fa-solid fa-code"></i>
+          <h2>Web Design</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim augue eu feugiat ultrices. Lectus
+            sem aliquet lectus, vitae molestie elit est non eros. Sed sit amet vehicula nibh. Maecenas ac diam in augue
+            interdum vestibulum. Curabitur volutpat, ligula sit amet, ultrices mauris.
+          </p>
+          <a href="#">Learn more</a>
+        </div>
+        <div>
+          <i class="fa-solid fa-crop-simple"></i>
+          <h2>UI/UX Design</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim augue eu feugiat ultrices. Lectus
+            sem aliquet lectus, vitae molestie elit est non eros. Sed sit amet vehicula nibh. Maecenas ac diam in augue
+            interdum vestibulum. Curabitur volutpat, ligula sit amet, ultrices mauris.
+          </p>
+          <a href="#">Learn more</a>
+        </div>
+        <div>
+          <i class="fa-brands fa-app-store"></i>
+          <h2>App Design</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim augue eu feugiat ultrices. Lectus
+            sem aliquet lectus, vitae molestie elit est non eros. Sed sit amet vehicula nibh. Maecenas ac diam in augue
+            interdum vestibulum. Curabitur volutpat, ligula sit amet, ultrices mauris.
+          </p>
+          <a href="#">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

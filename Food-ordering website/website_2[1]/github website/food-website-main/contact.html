@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    background: url('subscribe.png') no-repeat center center fixed; /* Image as background, no repeat */
+    background-size: cover; /* Cover the entire page */
+}
+
+form {
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background for form */
+    width: 400px;
+    border-radius: 25px;
+    padding: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 50px auto;
+    box-shadow: 5px 5px 5px 5px #ececec;
+}
+
+
+    
+    form h1 {
+        color: #fff;
+        text-align: center;
+        font-size: 22px;
+    }
+    
+    label {
+        color: #fff;
+        font-weight: bold;
+        padding-bottom: 5px;
+        padding-top: 15px;
+    }
+    
+    input, textarea {
+        box-sizing: border-box;
+        width: 100%; /* Full width */
+        height: 30px; /* Standard height */
+        padding: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        outline: none;
+        resize: none;
+    }
+    
+    textarea {
+        height: 50px; /* Adjusted height for textarea */
+    }
+    
+    #button-row {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    button {
+        width: 125px;
+        margin: 25px;
+        border: none;
+        outline: none;
+        border-radius: 15px;
+        height: 35px;
+        cursor: pointer;
+        color: #fff;
+    }
+    
+    button#send {
+        background: #ff0057;
+    }
+    
+    button#reset {
+        background: #707c05;
+    }
+    </style>
+</head>
+<body>
+   
+    <form id="form">
+        <h1>Contact</h1>
+        <div>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+        </div>
+        <div>
+            <label for="email">Email:</label><br>
+            <input  type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="message">Message</label><br>
+            <textarea name="message" id="message"></textarea>
+        </div>
+        <div id="button-row">
+            <div class="button">
+                <button type="submit" id="send">Send</button>
+            </div>
+            <div class="button">
+                <button type="reset" id="reset">Reset</button>
+            </div>
+        </div>
+    </form>
+    <script>
+        let sendBtn=document.getElementById('send');
+        let resetBtn=document.getElementById('reset');
+        let form=document.getElementById('form');
+        form.addEventListener('submit',(e)=>{
+            e.preventDefault
+        });
+        resetBtn.addEventListener('click',(e)=>{
+            let name=document.getElementById('name');
+            let email=document.getElementById('email');
+            let message=document.getElementById('message');    
+        });
+        name.value='';
+        email.value='';
+        message.value='';
+        sendBtn.addEventListener('click',(e)=>{
+            let name=document.getElementById('name');
+            let email=document.getElementById('email');
+            let message=document.getElementById('message');
+            name=name.value;
+            localStorage.setItem('name',name);
+            email=email.value;
+            localStorage.setItem('email',email);
+            message=message.value;
+            localStorage.setItem('message',message);
+        });
+    </script>
+</body>
+</html>

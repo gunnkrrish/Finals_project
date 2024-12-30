@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7e9;  
+    background-image: url('/food-website-main/assets/images/table-leaves-shape.png'); /* Add your table leaf image path here */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.8);  
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  
+    display: flex;
+    flex-direction: column;  
+    align-items: center;     
+    justify-content: center; 
+    width: 320px;            
+    max-width: 100%;         
+    transition: 0.5s ease-in-out;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1); 
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.7);  
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745; 
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838; 
+}
+
+#message {
+    margin-top: 15px;
+    font-size: 14px;
+    color: red;
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 20px;
+        width: 90%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+    
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+            <div id="message"></div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function (e) {
+            e.preventDefault();  // Prevent default form submission
+
+            // Get the username and password from the form
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Wait for fakeLogin (asynchronous function) to complete
+            const response = await fakeLogin(username, password);
+
+            // Handle the response after fakeLogin resolves
+            const messageElement = document.getElementById('message');
+            if (response.success) {
+                messageElement.style.color = 'green';
+                messageElement.textContent = 'Login successful! Redirecting...';
+
+                // Redirect to index.html after a short delay
+                setTimeout(() => {
+                    window.location.href = 'index.html';  // Change to the target page
+                }, 1000);
+            } else {
+                messageElement.style.color = 'red';
+                messageElement.textContent = 'Invalid username or password.';
+            }
+        });
+
+        // Fake login function to simulate server response (use actual fetch in real apps)
+        async function fakeLogin(username, password) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    // Hardcoded valid credentials
+                    if (username === 'user' && password === 'password') {
+                        resolve({ success: true });
+                    } else {
+                        resolve({ success: false });
+                    }
+                }, 1000);  // Simulate network delay
+            });
+        }
+
+    </script>
+</body>
+
+</html>

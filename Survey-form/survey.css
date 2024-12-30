@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
+/* font-family: 'Roboto', sans-serif; */
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+body {
+    background:linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1)), url(background.jpg);
+    background-repeat: no-repeat;
+    background-position: center 0px;
+    background-size: cover;
+    height: 780px;
+}
+.left {
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+    position: relative;
+    left: 5%;
+}
+
+#nav {
+    position: fixed;
+    z-index: 2;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0px 23px;
+}
+.home ,
+nav ul li a {
+    text-decoration: none;
+    color:black;
+    font-weight: bold;
+    transition: all 0.1s;
+    padding: 20px 20px;
+}
+.home:hover ,
+nav ul li a:hover {
+    background: black;
+    border-radius: 30px;
+    color: white;
+}
+.resume1 {
+    background: transparent;
+    padding: 20px 20px;
+    font-weight: bold;
+    transition: all 0.5s;
+    color: black;
+    border-radius: 10px;
+    /* border: 0; */
+    border: 2px solid rgb(71, 102, 151);
+    margin: 37px;
+}
+.resume1:hover {
+    background:black ;
+    color: rgb(255, 255, 255);
+}
+.container {
+    height: 530px;
+    /* background: white; */
+    margin: 0 120px;
+}
+.image1 {
+    display: flex;
+}
+.aboutme {
+    height: 340px;
+}
+.header {
+    color: black;
+    font-size: 4rem;
+    font-weight: bold;
+    PADDING-TOP: 90px;
+    padding-left: 165px;
+}
+.bmi {
+    font-size:4rem;
+}
+.subheader {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* PADDING-TOP: 151px; */
+    padding-left: 165px;
+    padding-top: 20px;
+}
+.flezzz {
+    display: flex;
+    /* justify-content: space-around; */
+    margin-top: 50px;
+    padding-left: 165px;
+}
+.email {
+    padding: 10px 20px;
+    width: 488px;
+    color: black;
+    border-radius: 10px;
+}
+.get_started {
+    margin-left: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 125px;
+    height: 50px;
+    font-weight: bold;
+    background-color: rgb(114, 162, 209);
+}
