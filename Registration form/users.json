@@ -42,5 +42,27 @@
     "address": "sdfsdf",
     "country": "India",
     "pincode": "sdfds"
+  },
+  {
+    "firstname": "gunn",
+    "lastname": "dkw",
+    "password": "123",
+    "mobile": "89300655454",
+    "gender": "Female",
+    "birthdate": "2004-02-23",
+    "address": "jende",
+    "country": "India",
+    "pincode": "2323"
+  },
+  {
+    "firstname": "jbd",
+    "lastname": "dbje",
+    "password": "123",
+    "mobile": "54548487485",
+    "gender": "Female",
+    "birthdate": "2003-02-12",
+    "address": "jlcnkec",
+    "country": "India",
+    "pincode": "2334"
   }
 ]
