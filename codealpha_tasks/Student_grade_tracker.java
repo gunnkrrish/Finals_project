@@ -1,4 +1,4 @@
-package Java_Projects;
+package codealpha_tasks;
 import java.util.*;
 class Student_grade_tracker{
     public static void main(String[] args) {
